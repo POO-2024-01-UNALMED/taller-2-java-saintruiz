@@ -13,34 +13,34 @@ public class Auto{
     int cantidadAsientos(){
         int sumatoria=0;
 
-        for (int i=0; i < asientos.length ; i++){
-            if (asientos[i] !=null){
+        for (int i=0; i < asientos.length ; i++)
+        {
+            if (asientos[i] !=null)
+            {
                 sumatoria++;
             }
         }
         return sumatoria;
     }
 
-    String verificarIntegridad(){
-        String retornoGeneral="";
-        
-        if (this.motor.registro==registro){
-            boolean confirmacion= false;
-            for (int i=0; i<asientos.length; i++){
-                if (this.asientos[i].registro==registro){
-                    confirmacion=true;
-                } else{
-                    confirmacion=false;}
-            }
-            if (confirmacion==true){
-                retornoGeneral="Auto original";}
+    String verificarIntegridad()
+    {
+        if (registro==this.motor.registro)
+        {
+            for (int n=0; n<asientos.length; n++)
+            {
+                if (asientos[n]!=null)
+                {
+                    if (asientos[n].registro!=this.registro)
+                    {
+                        return "Las piezas no son originales";
+                    }
+                }
+            }return "Auto original";
         }
-        else{
-            retornoGeneral="Las piezas no son original";
+        else
+        {
+            return "Las piezas no son originales";
         }
-        return retornoGeneral;
-            
-
     }
-
 }

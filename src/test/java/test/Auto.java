@@ -23,6 +23,7 @@ public class Auto{
 
     String verificarIntegridad(){
         String retornoGeneral="";
+        
         if (this.motor.registro==registro){
             boolean confirmacion= false;
             for (int i=0; i<asientos.length; i++){

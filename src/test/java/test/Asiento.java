@@ -27,5 +27,4 @@ public class Asiento{
         }
     }
 
-    //No hay más métodos
 }
